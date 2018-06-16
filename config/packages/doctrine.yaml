@@ -1,0 +1,36 @@
+
+#
+# This file is part of the `src-run/src-run-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, please view the LICENSE.md
+# file that was distributed with this source code.
+#
+
+doctrine:
+
+    dbal:
+        driver:         '%app.database.driver%'
+        server_version: '%app.database.version%'
+        host:           '%app.database.host%'
+        port:           '%app.database.port%'
+        user:           '%app.database.user%'
+        password:       '%app.database.pass%'
+        dbname:         '%app.database.name%'
+        charset:        '%app.database.charset%'
+        default_table_options:
+            charset: '%app.database.charset%'
+            collate: '%app.database.charset%_unicode_ci'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App
