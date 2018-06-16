@@ -1,0 +1,37 @@
+---
+
+##
+# This file is part of the `src-run/src-run-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, view the LICENSE.md
+# file distributed with this source code.
+##
+
+language: php
+sudo: false
+
+php:
+  - 7.1
+  - 7.2
+  - nightly
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+
+git:
+  depth: 3
+
+install:
+  - .bldr/bldr bring-up
+
+script:
+  - .bldr/bldr do-tests
+
+after_script:
+  - .bldr/bldr bring-dn
+
+...

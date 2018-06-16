@@ -1,0 +1,49 @@
+version: 2.0
+
+package:
+  name: 'src-run/src-run-app'
+  desc: 'A simple Symfony application that handles repository service redirects, repository shield caching, and other services.'
+  type: 'project:symfony-4'
+  srcs:
+    prod: '%project_root%/src/'
+    test: '%project_root%/tests/'
+    exec: '%project_root%/bin/console'
+
+api_doc:
+  enabled: false
+
+builder:
+  enabled: true
+
+    bring_up:
+      env:
+        execute_pre : [ ]
+        action_names: [ 'composer-get' ]
+        execute_post: [ ]
+      php:
+        execute_pre : [ ]
+        action_names: [ 'config-add:timezone' ]
+        execute_post: [ ]
+      app:
+        execute_pre : [ ]
+        action_names: [ 'composer-req' ]
+        execute_post: [ ]
+
+    do_tests:
+      execute_pre : [ ]
+      action_names: [ 'simple-phpunit' ]
+      execute_post: [ ]
+
+    bring_dn:
+      app:
+        execute_pre : [ ]
+        action_names: [ 'ci-coveralls, ci-codacy' ]
+        execute_post: [ ]
+      php:
+        execute_pre : [ ]
+        action_names: [ ]
+        execute_post: [ ]
+      env:
+        execute_pre : [ ]
+        action_names: [ 'composer-del' ]
+        execute_post: [ ]

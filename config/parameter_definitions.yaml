@@ -1,0 +1,39 @@
+
+#
+# This file is part of the `src-run/src-run-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, please view the LICENSE.md
+# file that was distributed with this source code.
+#
+
+imports:
+
+  - { resource: parameter_env_defaults.yaml }
+
+parameters:
+
+    app.database.host:    '%env(string:DATABASE_HOST)%'
+    app.database.port:    '%env(int:DATABASE_PORT)%'
+    app.database.user:    '%env(string:DATABASE_USER)%'
+    app.database.pass:    '%env(string:DATABASE_PASS)%'
+    app.database.name:    '%env(string:DATABASE_NAME)%'
+    app.database.driver:  '%env(string:DATABASE_DRIVER)%'
+    app.database.version: '%env(string:DATABASE_VERSION)%'
+    app.database.charset: '%env(string:DATABASE_CHARSET)%'
+
+    app.mailer.host: '%env(string:MAILER_HOST)%'
+    app.mailer.port: '%env(int:MAILER_PORT)%'
+    app.mailer.user: '%env(string:MAILER_USER)%'
+    app.mailer.pass: '%env(string:MAILER_PASS)%'
+    app.mailer.tls:  '%env(bool:MAILER_TLS)%'
+
+    app.github.api_auth_type: '%env(constant:GITHUB_API_AUTH_TYPE)%'
+    app.github.api_auth_user: '%env(string:GITHUB_API_AUTH_USER)%'
+    app.github.api_auth_pass: '%env(string:GITHUB_API_AUTH_PASS)%'
+    app.github.cache_enabled: '%env(bool:GITHUB_CACHE_ENABLED)%'
+    app.github.cache_path:    '%env(string:GITHUB_CACHE_PATH)%'
+    app.github.cache_ttl:     '%env(int:GITHUB_CACHE_TTL)%'
+    app.github.search_usrs:   '%env(csv:GITHUB_SEARCH_USRS)%'
+    app.github.search_orgs:   '%env(csv:GITHUB_SEARCH_ORGS)%'

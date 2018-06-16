@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/6.1/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         syntaxCheck="true"
+         bootstrap="vendor/autoload.php"
+>
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="intl.default_locale" value="en" />
+        <ini name="intl.error_level" value="0" />
+        <ini name="memory_limit" value="-1" />
+
+        <env name="KERNEL_CLASS" value="App\Kernel" />
+        <env name="SHELL_VERBOSITY" value="-1" />
+
+        <env name="APP_ENV" value="test" />
+        <env name="APP_DEBUG" value="1" />
+        <env name="APP_SECRET" value="s$cretf0rt3st" />
+
+        <env name="DATABASE_PASS" value="" />
+        <env name="MAILER_PASS" value="" />
+        <env name="GITHUB_API_AUTH_USER" value="robfrawley"/>
+        <env name="GITHUB_SEARCH_USRS" value="robfrawley"/>
+        <env name="GITHUB_SEARCH_ORGS" value="src-run,build-fail"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="src-run/src-run-app">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>src/</directory>
+        </whitelist>
+    </filter>
+
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+    </listeners>
+
+    <logging>
+        <log type="coverage-clover" target="var/build/clover.xml"/>
+    </logging>
+</phpunit>

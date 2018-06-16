@@ -1,0 +1,31 @@
+
+#
+# This file is part of the `src-run/src-run-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, please view the LICENSE.md
+# file that was distributed with this source code.
+#
+
+parameters:
+
+    env(DATABASE_HOST):    'localhost'
+    env(DATABASE_PORT):    3306
+    env(DATABASE_USER):    'src-run-app'
+    env(DATABASE_NAME):    'src-run-app'
+    env(DATABASE_DRIVER):  'mysqli'
+    env(DATABASE_VERSION): 'mariadb-10.2.15'
+    env(DATABASE_CHARSET): 'utf8mb4'
+
+    env(MAILER_HOST): 'smtp.sparkpostmail.com'
+    env(MAILER_PORT): 2525
+    env(MAILER_USER): 'SMTP_Injection'
+    env(MAILER_TLS):  true
+
+    env(GITHUB_API_AUTH_TYPE): '\Github\Client::AUTH_HTTP_TOKEN'
+    env(GITHUB_CACHE_ENABLED): true
+    env(GITHUB_CACHE_PATH):    '/%kernel.project_dir%/var/cache/all/github-api/'
+    env(GITHUB_CACHE_TTL):     600
+    env(GITHUB_SEARCH_USRS):   []
+    env(GITHUB_SEARCH_ORGS):   []

@@ -8,6 +8,6 @@
 # file that was distributed with this source code.
 #
 
-framework:
-    router:
-        strict_requirements: ~
+controllers:
+    resource: ../../src/Controller/
+    type: annotation

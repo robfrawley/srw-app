@@ -1,3 +1,21 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+
+#
+# This file is part of the `src-run/src-run-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, please view the LICENSE.md
+# file that was distributed with this source code.
+#
+
+index:
+  path: /
+  controller: App\Controller\RedirectController::defaultAction
+
+named_link_redirect:
+  path: /link/{name}
+  controller: App\Controller\RedirectController::namedLinkAction
+
+named_file_redirect:
+  path: /file/{name}
+  controller: App\Controller\RedirectController::namedFileAction

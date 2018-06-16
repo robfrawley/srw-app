@@ -8,6 +8,8 @@
 # file that was distributed with this source code.
 #
 
-framework:
-    router:
-        strict_requirements: ~
+services:
+
+    Github\Client:
+        calls:
+            - [ 'authenticate', [ '%app.github.api_auth_user%', '%app.github.api_auth_pass%', '%app.github.api_auth_type%' ] ]
