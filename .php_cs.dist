@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the `src-run/src-run-app` project.
+ * This file is part of the `src-run/srw-app` project.
  *
  * (c) Rob Frawley 2nd <rmf@src.run>
  *
@@ -13,7 +13,7 @@ use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
 $header = <<<HEADER
-This file is part of the `src-run/src-run-app` project.
+This file is part of the `src-run/srw-app` project.
 
 (c) Rob Frawley 2nd <rmf@src.run>
 

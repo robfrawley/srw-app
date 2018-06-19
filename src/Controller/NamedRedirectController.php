@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the `src-run/src-run-app` project.
+ * This file is part of the `src-run/srw-app` project.
  *
  * (c) Rob Frawley 2nd <rmf@src.run>
  *
@@ -14,12 +14,12 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-class RedirectController
+class NamedRedirectController
 {
     /**
      * @return Response
      */
-    public function defaultAction(): Response
+    public function homeAction(): Response
     {
         return new RedirectResponse('//github.com/src-run', 302);
     }
@@ -29,7 +29,7 @@ class RedirectController
      *
      * @return Response
      */
-    public function namedLinkAction(string $name): Response
+    public function linkAction(string $name): Response
     {
         var_dump([
             __METHOD__,
@@ -43,7 +43,7 @@ class RedirectController
      *
      * @return Response
      */
-    public function namedFileAction(string $name): Response
+    public function fileAction(string $name): Response
     {
         var_dump([
             __METHOD__,

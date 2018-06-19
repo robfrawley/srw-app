@@ -1,6 +1,6 @@
 
 #
-# This file is part of the `src-run/src-run-app` project.
+# This file is part of the `src-run/srw-app` project.
 #
 # (c) Rob Frawley 2nd <rmf@src.run>
 #
@@ -12,8 +12,8 @@ parameters:
 
     env(DATABASE_HOST):    'localhost'
     env(DATABASE_PORT):    3306
-    env(DATABASE_USER):    'src-run-app'
-    env(DATABASE_NAME):    'src-run-app'
+    env(DATABASE_USER):    'srw-app'
+    env(DATABASE_NAME):    'srw-app'
     env(DATABASE_DRIVER):  'mysqli'
     env(DATABASE_VERSION): 'mariadb-10.2.15'
     env(DATABASE_CHARSET): 'utf8mb4'

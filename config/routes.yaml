@@ -1,6 +1,6 @@
 
 #
-# This file is part of the `src-run/src-run-app` project.
+# This file is part of the `src-run/srw-app` project.
 #
 # (c) Rob Frawley 2nd <rmf@src.run>
 #
@@ -9,13 +9,51 @@
 #
 
 index:
-  path: /
-  controller: App\Controller\RedirectController::defaultAction
+    path: /
+    controller: App\Controller\NamedRedirectController::homeAction
 
 named_link_redirect:
-  path: /link/{name}
-  controller: App\Controller\RedirectController::namedLinkAction
+    path: /link/{name<[\w\d\.+_-]+>}
+    controller: App\Controller\NamedRedirectController::linkAction
 
 named_file_redirect:
-  path: /file/{name}
-  controller: App\Controller\RedirectController::namedFileAction
+    path: /file/{name}
+    controller: App\Controller\NamedRedirectController::fileAction
+
+repo_normal_shield_generator:
+    path: /shield/{organization}/{name}/{service}.{_format<svg|png>}
+    controller: App\Controller\RepoShieldGeneratorController::shieldAction
+    defaults:
+        style: normal
+
+repo_styled_shield_generator:
+    path: /shield/{style}/{organization}/{name}/{service}.{_format<svg|png>}
+    controller: App\Controller\RepoShieldGeneratorController::shieldAction
+
+repo_normal_shield_generator_redirect:
+    path: /s/{organization}/{name}/{service}.{_format<svg|png}}
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: repo_normal_shield_generator
+        permanent: false
+        keepQueryParams: true
+
+repo_styled_shield_generator_redirect:
+    path: /s/{style}/{organization}/{name}/{service}.{_format<svg|png}}
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: repo_styled_shield_generator
+        permanent: false
+        keepQueryParams: true
+
+repo_contextual_service:
+    path: /service/{organization}/{name}/{service?github}/{context?normal}
+    controller: App\Controller\RepoServiceRedirectController::serviceAction
+
+repo_contextual_service_redirect:
+    path: /{organization}/{name}/{service?github}/{context?normal}
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: repo_contextual_service
+        permanent: false
+        keepQueryParams: true

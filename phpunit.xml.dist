@@ -38,7 +38,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="src-run/src-run-app">
+        <testsuite name="src-run/srw-app">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

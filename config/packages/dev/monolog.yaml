@@ -1,0 +1,36 @@
+
+#
+# This file is part of the `src-run/srw-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, please view the LICENSE.md
+# file that was distributed with this source code.
+#
+
+monolog:
+    handlers:
+
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: ["!event"]
+
+        console:
+            type:   console
+            process_psr_3_messages: false
+            channels: ["!event", "!doctrine", "!console"]
+
+        server_log:
+            type: server_log
+            host: 0:9911
+
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type: firephp
+        #    level: info
+        #chromephp:
+        #    type: chromephp
+        #    level: info

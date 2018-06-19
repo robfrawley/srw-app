@@ -1,6 +1,6 @@
 
 #
-# This file is part of the `src-run/src-run-app` project.
+# This file is part of the `src-run/srw-app` project.
 #
 # (c) Rob Frawley 2nd <rmf@src.run>
 #
@@ -21,4 +21,4 @@ framework:
         log: true
 
     cache:
-        prefix_seed: src-run/src-run-app
+        prefix_seed: src-run/srw-app

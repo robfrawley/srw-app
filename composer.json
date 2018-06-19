@@ -1,15 +1,15 @@
 {
-    "name": "src-run/src-run-app",
+    "name": "src-run/srw-app",
     "license": "MIT",
     "type": "project",
-    "homepage": "https://src.run/src-run-app/home",
+    "homepage": "https://src.run/srw-app/home",
     "description": "A simple Symfony application that handles repository service redirects, repository shield caching, and other services.",
     "support": {
         "email": "rmf@src.run",
-        "source": "https://src.run/src-run-app/git",
-        "issues": "https://src.run/src-run-app/issues"
+        "source": "https://src.run/srw-app/git",
+        "issues": "https://src.run/srw-app/issues"
     },
-    "keywords": [ "src-run-app", "src-run", "symfony", "rmf" ],
+    "keywords": [ "srw-app", "src-run", "symfony", "rmf" ],
     "authors": [
         {
             "name": "Rob Frawley 2nd",
@@ -22,7 +22,10 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/doctrine-fixtures-bundle": "^3.0",
+        "doctrine/doctrine-bundle": "^1.9.1",
+        "doctrine/doctrine-fixtures-bundle": "^3.0.2",
+        "doctrine/doctrine-migrations-bundle": "^1.3.1",
+        "doctrine/orm": "^2.6.1",
         "eloquent/lcs": "~2.0",
         "guzzlehttp/psr7": "~1.4",
         "knplabs/github-api": "~2.0",
@@ -30,10 +33,12 @@
         "php-http/guzzle6-adapter": "~1.1",
         "php-http/message": "~1.6",
         "symfony/console": "^4.1",
+        "symfony/dotenv": "^4.1",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.1",
         "symfony/lts": "^4@dev",
-        "symfony/orm-pack": "^1.0",
+        "symfony/monolog-bundle": "^3.3",
+        "symfony/stopwatch": "^4.1",
         "symfony/web-server-bundle": "^4.1",
         "symfony/yaml": "^4.1"
     },
@@ -41,9 +46,9 @@
         "codacy/coverage": "~1.0",
         "friendsofphp/php-cs-fixer": "~2.0",
         "satooshi/php-coveralls": "~2.0",
-        "symfony/dotenv": "^4.1",
         "symfony/maker-bundle": "^1.5",
-        "symfony/phpunit-bridge": "~4.1"
+        "symfony/phpunit-bridge": "~4.1",
+        "symfony/var-dumper": "^4.1"
     },
     "autoload": {
         "psr-4": {
